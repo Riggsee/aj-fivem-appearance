@@ -55,7 +55,7 @@ RegisterServerEvent('fivem-appearances:buyclothing')
 AddEventHandler('fivem-appearances:buyclothing', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-	if Config.Money < 0 then
+	if Config.Money > 0 then
 		if Player.Functions.RemoveMoney('cash', Config.Money, "clothing-buy") then
 			TriggerClientEvent('fivem-appearance:purchaseSuccessful', src)
 		else
